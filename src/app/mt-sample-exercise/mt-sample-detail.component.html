@@ -1,0 +1,18 @@
+<h5>Farm Selected</h5>
+
+<div class="row mt-2">
+  <table class="table">
+    <thead>
+      <tr *ngIf="(data$ | async)?.FarmNo == 'null'">
+        <th>Nothing Selected</th>
+      </tr>
+      <tr *ngIf="(data$ | async)?.FarmNo != 'null'">
+        <th scope="col">{{ (data$ | async)?.Id }}</th>
+        <th scope="col">{{ (data$ | async)?.FarmNo }}</th>
+        <th scope="col">{{ (data$ | async)?.FarmName }}</th>
+        <th scope="col">{{ (data$ | async)?.ActiveDate }}</th>
+        <th scope="col">{{ (data$ | async)?.Address }}</th>
+      </tr>
+    </thead>
+  </table>
+</div>
